@@ -15,28 +15,19 @@ interface TaskFunc {
   (cb: Function): void
 }
 
-const log = {
-  progress: (text: string) => {
-    console.log(chalk.green(text))
-  },
-  error: (text: string) => {
-    console.log(chalk.red(text))
-  },
-}
-
 const paths = {
   root: path.join(__dirname, '/'),
   lib: path.join(__dirname, '/lib'),
 }
 
-// 删除 lib 文件
+// // 删除 lib 文件
 const clearLibFile: TaskFunc = async cb => {
   fse.removeSync(paths.lib)
-  log.progress('Deleted lib file')
+  console.log('Deleted lib file')
   cb()
 }
 
-// rollup 打包
+// // rollup 打包
 const buildByRollup: TaskFunc = async cb => {
   const inputOptions = {
     input: rollupConfig.input,
@@ -56,7 +47,7 @@ const buildByRollup: TaskFunc = async cb => {
     }
   } catch (e) {
     if (e instanceof Error) {
-      log.error(e.message)
+      console.error(e.message)
     }
   }
 
@@ -64,7 +55,7 @@ const buildByRollup: TaskFunc = async cb => {
     // closes the bundle
     await bundle.close()
     cb()
-    log.progress('Rollup built successfully')
+    console.log('Rollup built successfully')
   }
 }
 
@@ -90,7 +81,7 @@ const apiExtractorGenerate: TaskFunc = async cb => {
   })
 
   if (!isExist) {
-    log.error('API Extractor not find index.d.ts')
+    console.error('API Extractor not find index.d.ts')
     return
   }
   // 加载并解析 api-extractor.json 文件
@@ -112,10 +103,10 @@ const apiExtractorGenerate: TaskFunc = async cb => {
         await fse.remove(path.join(paths.lib, file))
       }
     })
-    log.progress('API Extractor completed successfully')
+    console.log('API Extractor completed successfully')
     cb()
   } else {
-    log.error(
+    console.error(
       `API Extractor completed with ${extractorResult.errorCount} errors` +
         ` and ${extractorResult.warningCount} warnings`,
     )
@@ -123,7 +114,7 @@ const apiExtractorGenerate: TaskFunc = async cb => {
 }
 
 const complete: TaskFunc = cb => {
-  log.progress('---- end ----')
+  console.log('---- end ----')
   cb()
 }
 

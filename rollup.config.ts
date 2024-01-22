@@ -10,8 +10,8 @@ import { fileURLToPath } from 'url';
 import json from '@rollup/plugin-json';
 import pkg from './package.json';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = path.dirname(__filename);
 
 const paths = {
     input: path.join(__dirname, '/src/index.ts'),
