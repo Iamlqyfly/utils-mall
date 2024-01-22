@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "云mall工具库",
   "main": "lib/index.js",
-  "type": "module",
   "module": "lib/index.esm.js",
   "typings": "lib/index.d.ts",
   "scripts": {
@@ -11,7 +10,11 @@
     "api": "api-extractor run",
     "build": "gulp build",
     "git": "git pull && git add . && git commit -m ",
-    "postgit": "git push"
+    "postgit": "git push",
+    "lint": "eslint --quiet --no-error-on-unmatched-pattern src/**/*.{ts,js,vue}",
+    "lint:fix": "npm run lint -- --fix",
+    "changelog": "gulp changelog",
+    "prepublishOnly": "npm run lint & npm run test & npm run changelog & npm run build"
   },
   "husky": {
     "hooks": {
