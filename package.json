@@ -11,12 +11,15 @@
     "build": "gulp build",
     "git": "git pull && git add . && git commit -m ",
     "postgit": "git push",
-    "lint": "eslint --quiet --no-error-on-unmatched-pattern src/**/*.{ts,js,vue}",
+    "lint": "eslint --quiet --no-error-on-unmatched-pattern src/*",
     "lint:fix": "npm run lint -- --fix",
     "changelog": "gulp changelog",
-    "release": "npm run lint & npm run test & npm run changelog & npm run build",
     "preinstall": "node -e \"if (parseInt(process.versions.node.split('.')[0]) !== 18) { console.error('请使用 Node 18'); process.exit(1); }\"",
-    "prepare": "npx husky install"
+    "prepare": "npx husky install",
+    "release:alpha": "npm run lint && npm run test && npm run changelog && npm run build && npm publish --tag alpha --access public --no-git-checks",
+    "release:beta": "npm run lint && npm run test && npm run changelog && npm run build && npm publish --tag beta --access public --no-git-checks",
+    "release": "npm run lint && npm run test && npm run changelog && npm run build && npm publish --tag latest --access public",
+    "commitlint": "commitlint --edit"
   },
   "husky": {
     "hooks": {
@@ -43,6 +46,8 @@
   "license": "ISC",
   "devDependencies": {
     "@babel/preset-env": "^7.23.8",
+    "@commitlint/cli": "^18.5.0",
+    "@commitlint/config-conventional": "^18.5.0",
     "@microsoft/api-extractor": "^7.39.1",
     "@rollup/plugin-json": "^6.1.0",
     "@types/fs-extra": "^11.0.4",
