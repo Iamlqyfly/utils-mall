@@ -26,6 +26,5 @@ export function toUnicodeAt(str: string, index: number = 0) {
  }
 
  export function testFunc(data) {
-  let d
   return data;
  }
