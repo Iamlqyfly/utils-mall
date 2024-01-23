@@ -15,7 +15,8 @@
     "lint:fix": "npm run lint -- --fix",
     "changelog": "gulp changelog",
     "release": "npm run lint & npm run test & npm run changelog & npm run build",
-    "preinstall": "node -e \"if (parseInt(process.versions.node.split('.')[0]) !== 18) { console.error('请使用 Node 18'); process.exit(1); }\""
+    "preinstall": "node -e \"if (parseInt(process.versions.node.split('.')[0]) !== 18) { console.error('请使用 Node 18'); process.exit(1); }\"",
+    "prepare": "npx husky install"
   },
   "husky": {
     "hooks": {
