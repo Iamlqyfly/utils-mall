@@ -20,7 +20,7 @@
     "release:beta": "npm run lint && npm run test && npm run changelog && npm run build && npm publish --tag beta --access public --no-git-checks",
     "release": "npm run lint && npm run test && npm run changelog && npm run build && npm publish --tag latest --access public",
     "commitlint": "commitlint --edit",
-    "commit": "cz"
+    "commit": "git-cz"
   },
   "husky": {
     "hooks": {
@@ -58,7 +58,9 @@
     "@typescript-eslint/eslint-plugin": "^6.19.0",
     "@typescript-eslint/parser": "^6.19.0",
     "chalk": "^5.3.0",
+    "commitizen": "^4.3.0",
     "conventional-changelog-cli": "^4.1.0",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.56.0",
     "eslint-plugin-jest": "^27.6.3",
     "fs-extra": "^11.2.0",
@@ -75,5 +77,10 @@
     "ts-jest": "^29.1.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
