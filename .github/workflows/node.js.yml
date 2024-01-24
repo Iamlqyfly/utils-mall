@@ -5,28 +5,27 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ['main']
   pull_request:
-    branches: [ "main" ]
+    branches: ['main']
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-        - uses: actions/checkout@v3 # git 克隆到当前机器上
-        - name: Use Node.js
-          uses: actions/setup-node@v3 # 设置node环境
-          with:
-            node-version: 18.x # 指定版本
-            cache: 'npm'
+      - uses: actions/checkout@v3 # git 克隆到当前机器上
+      - name: Use Node.js
+        uses: actions/setup-node@v3 # 设置node环境
+        with:
+          node-version: 18.x # 指定版本
+          cache: 'npm'
 
-        - name: Install Dependencies
-          run: npm install
+      - name: Install Dependencies
+        run: npm install
 
-        - name: Build
-          run: npm run build
+      - name: Build
+        run: npm run build
 
-        - name: View directory files
-          run: ls -a # 查看打包后的目录文件    
+      - name: View directory files
+        run: ls -a # 查看打包后的目录文件

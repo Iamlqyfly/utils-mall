@@ -1,5 +1,5 @@
 function flatten(array) {
-   return array?.flat();
+  return array?.flat();
 }
 
 export default flatten;
