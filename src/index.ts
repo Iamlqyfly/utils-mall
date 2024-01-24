@@ -24,3 +24,7 @@ export function toUnicodeAt(str: string, index: number = 0) {
  export function firstFunc(str: string) {
   return str;
  }
+
+export function sayHello(str: string) {
+  return `hello ${str}`;
+}
