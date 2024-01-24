@@ -12,7 +12,6 @@ module.exports = {
       {
         rules: {
           'header-check-rule': ({ header }) => {
-            console.log(header)
             if (!header)
               return [false, 'Commit message may not be empty'];
             const headerArr = header.split(':');

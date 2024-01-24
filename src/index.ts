@@ -25,6 +25,7 @@ export function toUnicodeAt(str: string, index: number = 0) {
   return str;
  }
 
- export function testFunc(data) {
-  return data;
+ export function stringify(data) {
+  return JSON.stringify(data)
+
  }

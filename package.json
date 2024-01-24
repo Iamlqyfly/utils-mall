@@ -19,7 +19,8 @@
     "release:alpha": "npm run lint && npm run test && npm run changelog && npm run build && npm publish --tag alpha --access public --no-git-checks",
     "release:beta": "npm run lint && npm run test && npm run changelog && npm run build && npm publish --tag beta --access public --no-git-checks",
     "release": "npm run lint && npm run test && npm run changelog && npm run build && npm publish --tag latest --access public",
-    "commitlint": "commitlint --edit"
+    "commitlint": "commitlint --edit",
+    "commit": "cz"
   },
   "husky": {
     "hooks": {
