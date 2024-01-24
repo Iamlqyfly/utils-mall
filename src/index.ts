@@ -24,8 +24,3 @@ export function toUnicodeAt(str: string, index: number = 0) {
  export function firstFunc(str: string) {
   return str;
  }
-
- export function stringify(data) {
-  return JSON.stringify(data)
-
- }
