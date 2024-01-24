@@ -1,5 +1,5 @@
-import assert from 'assert'
-import { firstFunc, sayHello } from '../src'
+import assert from 'assert';
+import { firstFunc, sayHello } from '../src';
 
 describe('validate:', () => {
   /**
@@ -7,13 +7,12 @@ describe('validate:', () => {
    */
   describe('firstFunc', () => {
     test(' return rollup ', () => {
-      assert.strictEqual(firstFunc('rollup'), 'rollup')
-    })
+      assert.strictEqual(firstFunc('rollup'), 'rollup');
+    });
   }),
-  describe('sayHello', () => {
-    test('return hello rollup', () => {
-      assert.strictEqual(sayHello('rollup'), 'hello rollup')
-    })
-  })
-
-})
+    describe('sayHello', () => {
+      test('return hello rollup', () => {
+        assert.strictEqual(sayHello('rollup'), 'hello rollup');
+      });
+    });
+});

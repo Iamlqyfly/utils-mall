@@ -1,4 +1,3 @@
-
 /**
  * 获取字符串指定下标的 unicode
  *
@@ -14,16 +13,16 @@
  * @beta
  */
 export function toUnicodeAt(str: string, index: number = 0) {
-   let code = str.charCodeAt(index).toString(16).toUpperCase()
-   while (code.length < 4) {
-     code = `0${code}`
-   }
-   return `\\u${code}`
- }
+  let code = str.charCodeAt(index).toString(16).toUpperCase();
+  while (code.length < 4) {
+    code = `0${code}`;
+  }
+  return `\\u${code}`;
+}
 
- export function firstFunc(str: string) {
+export function firstFunc(str: string) {
   return str;
- }
+}
 
 export function sayHello(str: string) {
   return `hello ${str}`;
