@@ -1,18 +1,15 @@
 import assert from 'assert';
-import { firstFunc, sayHello } from '../src';
+import { sleep, timestamp } from '../src'
 
-describe('validate:', () => {
-  /**
-   * firstFunc
-   */
-  describe('firstFunc', () => {
-    test(' return rollup ', () => {
-      assert.strictEqual(firstFunc('rollup'), 'rollup');
+describe('timestamp', () => {
+    it('returns a number', () => {
+      expect(typeof timestamp()).toBe('number');
     });
-  }),
-    describe('sayHello', () => {
-      test('return hello rollup', () => {
-        assert.strictEqual(sayHello('rollup'), 'hello rollup');
-      });
+  
+    it('returns a value close to the current timestamp', () => {
+      const now = Date.now();
+      const result = timestamp();
+      expect(result).toBeGreaterThanOrEqual(now - 100); // Allow for a 100ms difference
+      expect(result).toBeLessThanOrEqual(now + 100); // Allow for a 100ms difference
     });
-});
+  });

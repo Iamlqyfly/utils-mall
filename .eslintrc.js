@@ -20,7 +20,9 @@ const eslintrc = {
       experimentalObjectRestSpread: true,
     },
   },
-  rules: {}, // 自定义
+  rules: {
+    "@typescript-eslint/no-explicit-any": ["off"]
+  }, // 自定义
 };
 
 module.exports = eslintrc;
