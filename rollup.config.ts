@@ -10,6 +10,8 @@ import { fileURLToPath } from 'url';
 import json from '@rollup/plugin-json';
 import pkg from './package.json';
 import { terser } from "rollup-plugin-terser";
+import serve from 'rollup-plugin-serve';
+import livereload from 'rollup-plugin-livereload'
 
 // const __filename = fileURLToPath(import.meta.url);
 // const __dirname = path.dirname(__filename);
@@ -63,6 +65,12 @@ const rollupConfig = {
       // babel 默认不支持 ts 需要手动添加
       extensions: [...DEFAULT_EXTENSIONS, '.ts'],
     }),
+    livereload(),
+    serve({
+      port: 30001,
+      open: true,
+      contentBase: ['debugger', 'lib']
+    })
   ],
 };
 
