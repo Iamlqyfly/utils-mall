@@ -41,11 +41,11 @@ const rollupConfig = {
     {
       file: path.join(paths.output, 'index.min.js'),
       format: 'umd',
-      name: pkg.name,
-      plugins: [terser()]
+      name: 'utilsMall',
+      plugins: [terser()],
     },
   ],
-  // external: ['lodash'], // 指出应将哪些模块视为外部模块，如 Peer dependencies 中的依赖
+  external: ['lodash'], // 指出应将哪些模块视为外部模块，如 Peer dependencies 中的依赖
   plugins: [
     json(),
     eslint({
@@ -69,12 +69,11 @@ const rollupConfig = {
       // babel 默认不支持 ts 需要手动添加
       extensions: [...DEFAULT_EXTENSIONS, '.ts'],
     }),
-    livereload(),
+    livereload('lib'),
     serve({
       port: 3001,
       open: true,
-      // contentBase: [resolveFile('utils-mall/debugger'), resolveFile('utils-mall/lib')]
-      contentBase: [resolveFile('debugger'), resolveFile('lib'), resolveFile('')]
+      contentBase: ['lib', 'debugger']
     })
   ],
 };
