@@ -6,6 +6,7 @@
   "module": "lib/index.esm.js",
   "typings": "lib/index.d.ts",
   "scripts": {
+    "rimraf": "./node_modules/rimraf/bin.js",
     "dev": "rollup -c --watch",
     "build": "rimraf lib && rollup -c ./rollup.config.ts",
     "doc": "typedoc --options typedoc.json",
