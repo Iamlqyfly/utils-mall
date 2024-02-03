@@ -1,6 +1,6 @@
 {
   "name": "utils-mall",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "云mall工具库",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
@@ -20,9 +20,9 @@
     "commitlint": "commitlint --edit",
     "commit": "git-cz",
     "preinstall": "node -e \"if (parseInt(process.versions.node.split('.')[0]) !== 18) { console.error('请使用 Node 18'); process.exit(1); }\"",
-    "release:alpha": "npm run lint && npm run test && npm run changelog && npm run build && npm publish --tag alpha --access public --no-git-checks",
-    "release:beta": "npm run lint && npm run test && npm run changelog && npm run build && npm publish --tag beta --access public --no-git-checks",
-    "release": "npm run lint && npm run test && npm run changelog && npm run build && npm publish --tag latest --access public"
+    "publish:alpha": "npm run lint && npm run test && npm run changelog && npm run build && npm publish --tag alpha --access public --no-git-checks",
+    "publish:beta": "npm run lint && npm run test && npm run changelog && npm run build && npm publish --tag beta --access public --no-git-checks",
+    "publish": "npm run lint && npm run test && npm run changelog && npm run build && npm publish --tag latest --access public"
   },
   "husky": {
     "hooks": {
