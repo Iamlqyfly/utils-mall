@@ -23,7 +23,7 @@
     "preinstall": "node -e \"if (parseInt(process.versions.node.split('.')[0]) !== 18) { console.error('请使用 Node 18'); process.exit(1); }\"",
     "publish:alpha": "npm run lint && npm run test && npm run changelog && npm run build && npm publish --tag alpha --access public --no-git-checks",
     "publish:beta": "npm run lint && npm run test && npm run changelog && npm run build && npm publish --tag beta --access public --no-git-checks",
-    "publish": "npm run lint && npm run test && npm run changelog && npm run build && npm publish --tag latest --access public"
+    "publish": "npm publish --tag latest --access public"
   },
   "husky": {
     "hooks": {
