@@ -1,12 +1,12 @@
 import path from 'path';
-import { RollupOptions } from 'rollup';
+// import { RollupOptions } from 'rollup';
 import rollupTypescript from 'rollup-plugin-typescript2';
 import babel from 'rollup-plugin-babel';
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import { eslint } from 'rollup-plugin-eslint';
 import { DEFAULT_EXTENSIONS } from '@babel/core';
-import { fileURLToPath } from 'url';
+// import { fileURLToPath } from 'url';
 import json from '@rollup/plugin-json';
 import pkg from './package.json';
 import { terser } from "rollup-plugin-terser";
@@ -62,11 +62,16 @@ const rollupConfig = {
       // babel 默认不支持 ts 需要手动添加
       extensions: [...DEFAULT_EXTENSIONS, '.ts'],
     }),
-    livereload(),
+    livereload(
+      {
+        watch: ['debugger', 'lib'],
+        delay: 300
+      }
+    ),
     serve({
       port: 30001,
       open: true,
-      contentBase: ['debugger', 'lib']
+      contentBase: ['debugger', 'lib'],
     })
   ],
 };
