@@ -13,9 +13,6 @@ import { terser } from "rollup-plugin-terser";
 import serve from 'rollup-plugin-serve';
 import livereload from 'rollup-plugin-livereload'
 
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = path.dirname(__filename);
-
 const paths = {
   input: path.join(__dirname, '/src/index.ts'),
   output: path.join(__dirname, '/lib'),
