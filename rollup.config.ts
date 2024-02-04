@@ -62,17 +62,17 @@ const rollupConfig = {
       // babel 默认不支持 ts 需要手动添加
       extensions: [...DEFAULT_EXTENSIONS, '.ts'],
     }),
-    livereload(
-      {
-        watch: ['debugger', 'lib'],
-        delay: 300
-      }
-    ),
-    serve({
-      port: 30001,
-      open: true,
-      contentBase: ['debugger', 'lib'],
-    })
+    // livereload(
+    //   {
+    //     watch: ['debugger', 'lib'],
+    //     delay: 300
+    //   }
+    // ),
+    // serve({
+    //   port: 30001,
+    //   open: true,
+    //   contentBase: ['debugger', 'lib'],
+    // })
   ],
 };
 
